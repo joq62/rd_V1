@@ -243,7 +243,7 @@ normal_tests()->
     
     % Add Node0
    
-    "test_ebin/log.beam"=rpc:call(Node0,code,where_is_file,["log.beam"],5000),
+    "ebin/log.beam"=rpc:call(Node0,code,where_is_file,["log.beam"],5000),
     "ebin/rd.beam"=rpc:call(Node0,code,where_is_file,["rd.beam"],5000),
   %  {ok,_}=rpc:call(Node0,log,start_link,[],5000),
   %  {ok,_}=rpc:call(Node0,rd,start_link,[],5000),
