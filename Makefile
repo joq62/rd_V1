@@ -21,7 +21,9 @@ all:
 	#INFO: Deleting files and dirs created during execution/runtime 
 	rm -rf logs;
 	rm -rf *_a;
-	#INFO: Compile application		
+	#INFO: Compile application
+	rm -rf common_include;
+	cp -r ~/erlang/simple_system/common_include .
 	rebar3 compile;	
 	rm -rf _build*;
 	rebar3 edoc;
@@ -56,7 +58,9 @@ build:
 	rm -rf logs;
 	rm -rf *_a;
 	rm -rf _build;
-	#INFO: Compile application	
+	#INFO: Compile application
+	rm -rf common_include;
+	cp -r ~/erlang/simple_system/common_include .
 	rebar3 compile;
 	rm -rf _build*;
 	git status
@@ -119,6 +123,8 @@ eunit:
 	cp ../log/src/log.app.src test_ebin/log.app;
 	#INFO: Creating Common applications needed for testing
 	#INFO: Compile application
+	rm -rf common_include;
+	cp -r ~/erlang/simple_system/common_include .
 	mkdir ebin;		
 	rebar3 compile;	
 	cp _build/default/lib/*/ebin/* ebin;
