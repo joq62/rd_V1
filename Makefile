@@ -26,6 +26,7 @@ all:
 	cp -r ~/erlang/simple_system/common_include .
 	rebar3 compile;	
 	rm -rf _build*;
+	rm -rf rebar.lock;
 	rebar3 edoc;
 #	git add *;
 #	git add -f *;

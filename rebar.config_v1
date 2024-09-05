@@ -3,7 +3,7 @@
 	   {i,"common_include"},
             {d, 'EDOC', [{doc_path, "doc"}]}]}.
 {deps, [
-    %   {log,{git,"https://github.com/joq62/log.git",{branch,"main"}}}
+       {log,{git,"https://github.com/joq62/log.git",{branch,"main"}}}
        ]}.
 
 {shell, [
