@@ -23,7 +23,7 @@ all:
 	rm -rf *_a;
 	#INFO: Compile application
 	rm -rf common_include;
-	cp -r ~/erlang/simple_system/common_include .
+	cp -r ~/erlang/common_include .
 	rebar3 compile;	
 	rm -rf _build*;
 	rm -rf rebar.lock;
@@ -61,7 +61,7 @@ build:
 	rm -rf _build;
 	#INFO: Compile application
 	rm -rf common_include;
-	cp -r ~/erlang/simple_system/common_include .
+	cp -r ~/erlang/common_include .
 	rebar3 compile;
 	rm -rf _build*;
 	git status
@@ -125,7 +125,7 @@ eunit:
 	#INFO: Creating Common applications needed for testing
 	#INFO: Compile application
 	rm -rf common_include;
-	cp -r ~/erlang/simple_system/common_include .
+	cp -r ~/erlang/common_include .
 	mkdir ebin;		
 	rebar3 compile;	
 	cp _build/default/lib/*/ebin/* ebin;
