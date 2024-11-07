@@ -335,8 +335,6 @@ handle_info({nodedown,NodeDown}, State) ->
 handle_info(timeout, State) ->
    
     rd_store:new(),
-%    {ok,_}=heartbeat:start_link(),
-    io:format("timeout signal ~p~n",[{?MODULE,?LINE}]),
     {noreply, State};
 
 handle_info(Info, State) ->
@@ -401,7 +399,7 @@ call(ResourceType, Module, Function, Args, Timeout) ->
 	      {error,Reason}->
 		  {error,Reason};
 	      []->
-		  {error,[eexists_resources]};
+		  {error,["Resource eexists ",ResourceType]};
 	      Resources ->
 		  [{_,Node}|_]=Resources,
 		%  [{Node,_}|_]=Resources,
